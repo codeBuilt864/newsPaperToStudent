@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-left">
         <Link to="/" className="navbar-brand">
-          Book Store
+          News Paper
         </Link>
       </div>
       <div className="navbar-right">

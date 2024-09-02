@@ -7,9 +7,8 @@ import Logout from "./components/Logout";
 
 
 function App() {
-  
+
   return (
-    <>
       <BrowserRouter>
         <Navbar />
       <Routes>
@@ -19,7 +18,6 @@ function App() {
         <Route path="/logout" element={<Logout />}></Route>
       </Routes>
       </BrowserRouter>
-    </>
   )
 }
 
