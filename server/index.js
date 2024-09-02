@@ -16,6 +16,9 @@ app.use(cors({
 }));
 app.use(cookieParser());
 dotenv.config()
+// app.use('/auth', AdminRouter)
+// app.use('/student', studentRouter)
+// app.use('/news',newsRouter)
 
 app.listen(process.env.PORT, () => {
     console.log("Server is Running");
