@@ -5,7 +5,7 @@ import bcrypt from 'bcrypt';
 const router = express.Router();
 import { verifyAdmin } from './auth.js';
 
-router.post('/register', verifyAdmin, async (req, res) => {
+router.post('/register', async (req, res) => {
     try {
         const {firstname,lastname , password,email} = req.body;
         const student = await Student.findOne({firstname})
@@ -15,9 +15,9 @@ router.post('/register', verifyAdmin, async (req, res) => {
         const hashPassword = await bcrypt.hash(password, 10)
         const newstudent = new Student({
             firstname,
-            password: hashPassword,
             lastname,
-            email:email
+            email:email,
+            password: hashPassword,
         })
         await newstudent.save()
         return res.json({registered: true})

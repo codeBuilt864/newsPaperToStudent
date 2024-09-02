@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login form.com</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script defer src="components/login.js"></script>
   </head>
   <body>
     <div class="container">
@@ -14,12 +15,12 @@
       </h1>
 
       <form>
-        <input type="text" placeholder="First Name" /><br />
-        <input type="text" placeholder="Last Name" /><br />
-        <input type="email" placeholder="Email" /><br />
-        <input type="password" placeholder="Password" /><br />
+        <input type="text" placeholder="First Name" id="fname"/><br />
+        <input type="text" placeholder="Last Name" id="lname"/><br />
+        <input type="email" placeholder="Email" id="email"/><br />
+        <input type="password" placeholder="Password" id="password"/><br />
         <input type="password" placeholder="Confrim Password" /><br />
-        <button>Sign Up</button> <br />
+        <button type="submit" id="signbtn">Sign Up</button> <br />
 
         <p>
           By clicking the sign up button, you agree to our<br />

@@ -53,8 +53,8 @@ const verifyAdmin = (req, res, next) => {
             if(err) {
                 return res.json({ message: "Invalid token"})
             } else {
-                req.username = decoded.username;
-                req.role = decoded.role;
+                req.firstname = decoded.firstname;
+                req.email = decoded.email;
                 next()
             }
         })
@@ -72,14 +72,14 @@ const verifyUser = (req, res, next) => {
                     if(err) {
                         return res.json({ message: "Invalid token"})
                     } else {
-                        req.username = decoded.username;
-                        req.role = decoded.role;
+                        req.firstname = decoded.firstname;
+                        req.email = decoded.email;
                         next()
                     }
                 })
             } else {
-                req.username = decoded.username;
-                req.role = decoded.role;
+                req.firstname = decoded.firstname;
+                req.email = decoded.email;
                 next()
             }
         })
