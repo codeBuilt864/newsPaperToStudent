@@ -45,6 +45,11 @@ const handleSubmit = () => {
           onChange={(e) => setFirstname(e.target.value)}/>
         </div>
         <div className="form-group">
+          <label htmlFor="email">Email:</label>
+          <input type="text" placeholder='Email Name'
+          onChange={(e) => setFirstname(e.target.value)}/>
+        </div>
+        <div className="form-group">
           <label htmlFor="password">Password:</label>
           <input type="Password" placeholder='Ender Password'
           onChange={(e) => setPassword(e.target.value)}/>
@@ -54,7 +59,7 @@ const handleSubmit = () => {
           <input type="Password" placeholder='Conform Password'
           onChange={(e) => setPassword(e.target.value)}/>
         </div>
-        <button className='btn-login' onClick={handleSubmit}>Login</button>
+        <button className='btn-login' onClick={handleSubmit}>Sign up</button>
       </div>
     </div>
   )

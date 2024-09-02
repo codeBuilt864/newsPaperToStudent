@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="navbar-right">
         {/* <Link to='/books' className='navbar-link'>Books</Link> */}
         <Link to="/contact" className="navbar-link">
-          Contact
+          feedback
         </Link>
         {/* <Link to="/service" className="navbar-link">
           Service
