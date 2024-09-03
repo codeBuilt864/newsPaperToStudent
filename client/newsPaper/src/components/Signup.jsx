@@ -61,7 +61,7 @@ const handleSubmit = async (e) => {
           <input type="text" placeholder='Ender Lastname' id="lastname"
           onChange={handleChange}/>
 
-          <input type="text" placeholder='Email Name' id='email'
+          <input type="email" placeholder='Email Name' id='email'
           onChange={handleChange}/>
   
           <input type="Password" placeholder='Ender Password' id="password"
