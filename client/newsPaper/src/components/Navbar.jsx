@@ -29,7 +29,7 @@ const Navbar = () => {
           Dashboard
         </Link> */}
 
-        <Link to="/login" className="navbar-link">
+        <Link to="/signup" className="navbar-link">
           Login
         </Link>
         {/* <Link to="/logout" className="navbar-link">
