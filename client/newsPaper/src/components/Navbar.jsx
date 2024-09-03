@@ -11,30 +11,12 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-right">
-        {/* <Link to='/books' className='navbar-link'>Books</Link> */}
         <Link to="/contact" className="navbar-link">
-          feedback
+          Feedback
         </Link>
-        {/* <Link to="/service" className="navbar-link">
-          Service
-        </Link> */}
-
-        {/* <Link to="/addbook" className="navbar-link">
-          Add Book
-        </Link> */}
-        {/* <Link to="/books" className="navbar-link">
-          Books
-        </Link> */}
-        {/* <Link to="/dashboard" className="navbar-link">
-          Dashboard
-        </Link> */}
-
         <Link to="/signup" className="navbar-link">
           Login
         </Link>
-        {/* <Link to="/logout" className="navbar-link">
-          Logout
-        </Link> */}
       </div>
     </nav>
   );

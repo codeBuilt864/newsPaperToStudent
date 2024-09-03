@@ -1,97 +1,45 @@
-/* Navbar.css */
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'); */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
+/* Navbar Styles */
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    top: 0;
-    padding: 10px 20px; /* Reduced padding */
-    background: linear-gradient(135deg, #301934, #5a2766); /* Blue gradient */
+    background-color: #333; /* Dark background color */
+    padding: 15px 30px;
     color: #fff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle white border */
-    position: sticky;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduced shadow for a more compact look */
-}
-
-.navbar-left {
-    display: flex;
-    align-items: center;
-}
-
-.navbar-brand {
-    font-size: 1.4rem; /* Reduced font size */
-    font-weight: 600;
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.3s ease;
-}
-
-.navbar-brand:hover {
-    color: #f0f0f0;
-}
-
-.navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Reduced gap between links */
-}
-
-.navbar-link {
+    z-index: 1000; /* Ensures the navbar stays above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds subtle shadow for depth */
+  }
+  
+  .navbar-left .navbar-brand {
     color: #fff;
     text-decoration: none;
-    font-weight: 500;
-    position: relative;
-    padding: 5px;
-    transition: color 0.3s ease, transform 0.2s ease;
-    font-size: 0.9rem; /* Reduced font size */
-}
-
-.navbar-link:hover {
-    color: #f0f0f0;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .navbar-right {
+   margin-right: 50px;
+  }
+  
+  .navbar-link {
+    color: #fff;
     text-decoration: none;
-    transform: translateY(-1px); /* Slight hover lift for an interactive feel */
-}
-
-.navbar-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    display: block;
-    margin-top: 4px; /* Reduced space above underline */
-    left: 0;
-    background: white;
-    transition: width 0.3s ease;
-}
-
-.navbar-link:hover::after {
-    width: 100%;
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 15px; /* Reduced padding for smaller screens */
-    }
-
-    .navbar-left, .navbar-right {
-        width: 100%;
-        justify-content: center;
-        margin-bottom: 10px;
-    }
-
-    .navbar-right {
-        flex-direction: column;
-        gap: 8px; /* Reduced gap for smaller screens */
-    }
-}
+    margin-left: 20px;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .navbar-link:hover {
+    color: #007bff; /* Hover color for links */
+  }
+  
+  body {
+    padding-top: 60px; /* Adjust this value according to navbar height */
+    margin: 0;
+  }
+  
