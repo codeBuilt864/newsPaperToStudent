@@ -6,7 +6,8 @@ export const signup = async (req, res, next) => {
 // console.log(req.body);
   const { firstname,lastname, email, password } = req.body
   const hashedPassword = bcryptsjs.hashSync(password, 10)
-  const newUser = new Student ({ firstname,lastname, email, password: hashedPassword })
+  // const hashePassword = bcryptsjs.hashSync(conformpassword, 12)
+  const newUser = new Student ({ firstname,lastname, email, password: hashedPassword})
   try {
     await newUser.save()
     res.status(201).json("User created successfully")

@@ -7,3 +7,8 @@
 .sign-span{
     color: blue;
 }
+
+.error{
+    color: red;
+    margin-top: 5px;
+}

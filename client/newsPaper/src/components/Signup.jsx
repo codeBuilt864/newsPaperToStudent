@@ -6,69 +6,78 @@ import '../css/signin.css'
 
 
 axios.defaults.withCredentials = true;
-const Login = () => {
-  const [firstname, setFirstname] = useState('')
-  const [lastname, setLastname] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [conformpassword, setConformPassword] = useState('')
+const Signup = () => {
+  const [formData, setFormData] = useState({})
+  const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(null)
   const [role, setRole] = useState('admin')
   const navigate = useNavigate()
 
   axios.defaults.withCredentials = true;
 
-const handleSubmit = async () => {
-  e.preventDefault();
-    try {
-      const res = await fetch("/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      const data = await res.json();
-      console.log(data)
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value
+    })
     
-    } catch (e) {
-      console.error(e);
+  }
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    setLoading(true)
+    const res = await fetch("/api/auth/signup",{
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    })  
+    const data = await res.json();
+    if(data.success === false){
+      setLoading(false)
+      setError(data.message) 
+      return;
     }
+    setLoading(false)
+    setError(null)
+    console.log(data)
+    navigate('/login')
+  } catch (error) {
+    setLoading(false)
+    setError(error.message)
+  }
+ 
   }  
 
   return (
     <div className='login-page'>
       <div className="login-container">
         <h2>Sign Up</h2> <br />
-        <div className="form-group">
-          <label htmlFor="firstname">Firstname:</label>
+        <form onSubmit={handleSubmit} action="">
+
           <input type="text" placeholder='Ender Firstname' id='firstname'
-          onChange={(e) => setFirstname(e.target.value)}/>
-        </div>
-        <div className="form-group">
-          <label htmlFor="lastname">Lastname:</label>
+          onChange={handleChange}/>
+
           <input type="text" placeholder='Ender Lastname' id="lastname"
-          onChange={(e) => setLastname(e.target.value)}/>
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
+          onChange={handleChange}/>
+
           <input type="text" placeholder='Email Name' id='email'
-          onChange={(e) => setEmail(e.target.value)}/>
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
+          onChange={handleChange}/>
+  
           <input type="Password" placeholder='Ender Password' id="password"
-          onChange={(e) => setPassword(e.target.value)}/>
-        </div>
-        <div className="form-group">
-          <label htmlFor="cpassword">Conform Password:</label>
+          onChange={handleChange}/>
+  
           <input type="Password" placeholder='Conform Password'
-          onChange={(e) => setConformPassword(e.target.value)}/>
-        </div>
-        <button className='btn-login' onClick={handleSubmit}>Sign up</button>
+          onChange={handleChange}/>
+        <button disabled={loading} className='btn-login'>{loading ? 'loading...' : 'sign up'}</button>
+        </form>
         <div className="sign">
         <p>Have an account?</p>
-        <Link to={"/sign-in"}>
+        <Link to={"/login"}>
           <span className='sign-span'>Sign in</span>
         </Link>
       </div>
+      {error && <p className='error'>{error}</p>}
       </div>
    
     </div>
@@ -76,4 +85,4 @@ const handleSubmit = async () => {
   )
 }
 
-export default Login
+export default Signup
