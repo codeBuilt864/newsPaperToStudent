@@ -14,6 +14,12 @@ const Navbar = () => {
         <Link to="/contact" className="navbar-link">
           Feedback
         </Link>
+        <Link to="/about" className="navbar-link">
+          About
+        </Link>
+        <Link to="/dashboard" className="navbar-link">
+          Dashboard
+        </Link>
         <Link to="/signup" className="navbar-link">
           Login
         </Link>

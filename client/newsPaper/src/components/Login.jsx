@@ -41,7 +41,7 @@ const handleSubmit = async (e) => {
     setLoading(false)
     setError(null)
     console.log(data)
-    navigate('/')
+    navigate('/news')
   } catch (error) {
     setLoading(false)
     setError(error.message)

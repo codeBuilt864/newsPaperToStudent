@@ -17,7 +17,7 @@ body {
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, rgba(0, 123, 255, 0.8), rgba(0, 212, 255, 0.8)), 
-                url(../images/fot.jpg) no-repeat center center; /* Gradient overlay on background image */
+                url(../image/fot.jpeg) no-repeat center center; /* Gradient overlay on background image */
     background-size: cover;
     color: white;
     height: 92vh;

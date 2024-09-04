@@ -1,6 +1,6 @@
 /* Signup Page Styles */
 
-body {
+/* body {
   font-family: 'Arial', sans-serif;
   background-color: #f3f4f6;
   margin: 0;
@@ -9,7 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 120vh;
-}
+} */
 
 .login-page {
   display: flex;
